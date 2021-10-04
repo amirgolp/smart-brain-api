@@ -1,31 +1,37 @@
+// IMAGE ROUTE
+// This is for increasing the user entries number when they use the application.
+// Gets the id from the body and again uses Knex syntax for incrementing entries.
+
 const Clarifai = require('clarifai');
 
-//You must add your own API key here from Clarifai. 
+// API KEY
 const app = new Clarifai.App({
- apiKey: 'YOUR API KEY HERE' 
+  apiKey: "8963399fd3a74f48ac7572b4d7d1b4af",
 });
 
+// Clarifai's face detection magic
 const handleApiCall = (req, res) => {
   app.models
     .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
-    .then(data => {
+    .then((data) => {
       res.json(data);
     })
-    .catch(err => res.status(400).json('unable to work with API'))
-}
+    .catch((err) => res.status(400).json('unable to work with API'));
+};
 
 const handleImage = (req, res, db) => {
   const { id } = req.body;
-  db('users').where('id', '=', id)
-  .increment('entries', 1)
-  .returning('entries')
-  .then(entries => {
-    res.json(entries[0]);
-  })
-  .catch(err => res.status(400).json('unable to get entries'))
-}
+  db('users')
+    .where('id', '=', id) // notice it's not === since this is sql
+    .increment('entries', 1)
+    .returning('entries')
+    .then((entries) => {
+      res.json(entries[0]);
+    })
+    .catch((err) => res.status(400).json('unable to get entries'));
+};
 
 module.exports = {
   handleImage,
-  handleApiCall
-}
+  handleApiCall,
+};
