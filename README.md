@@ -1,13 +1,39 @@
-# SmartBrain-api - v2
-Final project for ZTM course
+## Smart Brain API
 
-1. Clone this repo
-2. Run `npm install`
-3. Run `npm start`
-4. You must add your own API key in the `controllers/image.js` file to connect to Clarifai API
-5. Add your own database credentials to `server.js` line 12
+This is the API for the <a href="https://github.com/amirgolp/smart-brain">Smart Brain application.</a>
 
-You can grab Clarifai API key [here](https://www.clarifai.com/)
+Smart Brain is a web app that uses the Clarifai API to locate a face in a picture. Using a React.js front-end and Node.js back-end with Express.js as well as a PostgreSQL database to keep track of how many entries a user has made.
 
+![picture of the app](https://github.com/amirgolp/smart-brain/src/sample.png)
 
-** Make sure you use postgreSQL instead of mySQL for this code base.
+## Technologies Used
+
+### Front-End
+
+- HTML5
+- CSS3
+- React.js
+
+### Back-End
+
+- Node.js
+- Express.js
+- PostgreSQL
+
+### NPM Packages
+
+- Create-React-App
+- Tachyons
+- react-tilt
+- particles.js
+- Bcrypt
+- Postgresql
+- knex
+- body parser
+- cors
+- express
+
+### APIs
+
+- <a href="https://clarifai.com/models/face-detection-image-recognition-model-a403429f2ddf4b49b307e318f00e528b-detection">Clarifai</a>
+- <a href="https://github.com/amirgolp/smart-brain">Smart Brain repo</a>
