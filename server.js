@@ -33,7 +33,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(cors({origin: 'https://smart-brain-frontie.herokuapp.com/'}));
+app.use(cors({origin: 'https://smart-brain-frontie.herokuapp.com'}));
 // app.use(function (req, res, next) {
 
 //   // Website you wish to allow to connect
